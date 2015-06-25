@@ -1,0 +1,81 @@
+{"name": "debat2007",
+"children": [
+
+  {"name": "Nicolas Sarkozy",
+   "children": [	
+	{"name": "Politique",
+	"children": [
+	{"name": "socialiste", "size": 9 },
+	{"name": "ump", "size": 3 },
+	{"name": "fn", "size": 9 },
+	{"name": "socialiste", "size": 13 },
+	{"name": "europe", "size": 12 }
+	]},
+
+	{"name": "Securite",
+	"children": [
+	{"name": "délinquance", "size": 12 },
+	{"name": "police", "size": 2 },
+	{"name": "policiers", "size": 4 },
+	{"name": "crime", "size": 7 },
+	{"name": "criminels", "size": 1 },
+	{"name": "sécurité", "size": 11 }
+	]},
+	
+	{"name": "Immigration",
+	"children": [
+	{"name": "danger", "size": 14 },
+	{"name": "afrique", "size": 8 },
+	{"name": "passeurs", "size": 4 },
+	{"name": "libye", "size": 7 },
+	{"name": "italie", "size": 1 },
+	{"name": "sécurité", "size": 5 }
+	]},
+
+	{"name": "Economie",
+	"children": [
+	{"name": "réduire", "size": 3 },
+	{"name": "productivité", "size": 6 },
+	{"name": "croissance", "size": 2 }
+	]}]},
+
+{"name": "Ségolène Royale",
+   "children": [	
+	{"name": "Politique",
+	"children": [
+	{"name": "ump", "size": 12 },
+	{"name": "fn", "size": 5 },
+	{"name": "ps", "size": 4 }
+	]},
+
+	{"name": "Securite",
+	"children": [
+	{"name": "délinquance", "size": 4 },
+	{"name": "police", "size": 12 },
+	{"name": "policiers", "size": 4 },
+	{"name": "viols", "size": 2 },
+	{"name": "agressions", "size": 12 }
+	]},
+	
+	{"name": "Immigration",
+	"children": [
+	{"name": "danger", "size": 7 },
+	{"name": "afrique", "size": 9 },
+	{"name": "aide", "size": 9 },
+	{"name": "passeurs", "size": 2 },
+	{"name": "libye", "size": 8 },
+	{"name": "italie", "size": 5 },
+	{"name": "sécurité", "size": 1 }
+	]},
+
+	{"name": "Economie",
+	"children": [
+	{"name": "réduire", "size": 2 },
+	{"name": "productivité", "size": 4 },
+	{"name": "croissance", "size": 10 },
+	{"name": "responsable", "size": 10 }
+	]}]}
+]
+}
+
+

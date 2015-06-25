@@ -1,0 +1,173 @@
+var doNotShowTooltip = false;
+
+//Garbage
+
+/* <button onclick="f()">ANNEE</button>		<button onclick="g()">RESET</button> */
+
+// Affiche les tooltips
+function showTooltip(string, id, x, y, boolean, showingdelay){
+	
+	if(!doNotShowTooltip){
+	var tooltip = d3.select("body").append("div")   
+	.attr("class", "tooltipbody")
+	.attr("id", id)               
+	.style("opacity", 0.01)
+	
+	tooltip.transition()
+		.delay(showingdelay)
+		.duration(500)      
+		.style("opacity", 0.9)
+
+	tooltip.html(string) 
+	.style("left", x + "%")     
+	.style("top", y + "%");	
+
+	//Autodestruction des tooltip si true
+	if(boolean){
+		tooltip.transition().delay(3000).duration(2000).style("opacity",0);
+	}
+	}
+}
+
+// Cette fonction écoute les "select"
+window.onload = function(){
+	document.getElementById('select-visu').addEventListener('change', theme);
+	document.getElementById('select-visu-spec').addEventListener('change', annee);
+};
+
+// Annule l'affichage des tooltips
+function cancelTooltip(){
+ doNotShowTooltip = true;
+ document.getElementById("cancelbutton").style.visibility = "hidden";
+ document.getElementById("tooltipisbackbutton").style.visibility = "visible";
+}
+
+// Ré-autorise l'affichage des tooltips
+function tooltipIsBack(){
+ doNotShowTooltip = false;
+ document.getElementById("cancelbutton").style.visibility = "visible";
+ document.getElementById("tooltipisbackbutton").style.visibility = "hidden";
+}
+	
+// Disjonction de cas au niveau du thème
+var tm, cl, hm, storedTheme;
+var theme = function(ev){
+
+	 switch(ev.target.selectedOptions[0].id){
+
+	case 'select-treemap':{
+		cleanDiv();
+		tm = new Treemap();
+		tm.createTreemap();
+		loadgraph();
+		writeTextTreemap();
+		storedTheme = 'select-treemap';
+		showTooltip("Sélectionnez une année de débat", "select-treemap" , 80, 10, true, 0);
+		}
+	break;
+
+	case 'select-cloud':{
+		cleanDiv();
+		loadgraph();
+		cl = new Cloud();
+		cl.createCloud();
+		writeTextCloud();
+		storedTheme = 'select-cloud';
+		showTooltip("Sélectionnez une année de débat", "select-cloud" , 80, 10, true, 0);
+		}
+	break;
+
+	case 'select-homemadevisu':{
+		cleanDiv();
+		loadgraph();
+		writeTextHomeMadeVisu();
+		writeSpecificContentHomeMadeVisu();
+		g();
+		storedTheme = 'select-homemadevisu';
+		document.getElementById('select-visu-spec').style.visibility = 'hidden';
+		}
+		break;
+	 }
+};
+
+
+
+// Disjonction de cas au niveau de l'année (à régler, il faut que ce menu prenne en compte le choix au dessus)
+var annee = function(ev){
+
+	 switch(ev.target.selectedOptions[0].id){
+		case 'select-1981':{
+			switch(storedTheme){
+				case 'select-treemap':{
+					writeSpecificContentTreemap();
+					switchData('json/debat1981.json');
+					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
+				}
+				case 'select-cloud':{
+					cl.loadButtons(1981);
+					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
+				}		
+			}
+		}
+		break;
+
+		case 'select-1988':{
+			switch(storedTheme){
+				case 'select-treemap':{
+					writeSpecificContentTreemap();
+					switchData('json/debat1988.json');
+					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
+				}
+				case 'select-cloud':{
+					cl.loadButtons(1988);
+					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
+				}		
+			}
+		}
+		break;
+
+		case 'select-1995':{
+			switch(storedTheme){
+				case 'select-treemap':{
+					writeSpecificContentTreemap();
+					tm.switchData('json/flare.json');
+					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
+				}
+				case 'select-cloud':{
+					cl.loadButtons(1995);
+					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
+				}	
+			}
+		}
+		break;
+
+		case 'select-2007':{
+			switch(storedTheme){
+				case 'select-treemap':{
+					writeSpecificContentTreemap();
+					tm.switchData('json/debat2007.json');
+					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
+				}
+				case 'select-cloud':{
+					cl.loadButtons(2007);
+					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
+				}		
+			}
+		}
+		break;
+		 }
+};
+
+// Affiche le contenu du "body-content"
+function loadgraph(){
+	document.getElementById("body-content").style.visibility = "visible";
+	document.getElementById("select-visu-spec").style.visibility = "visible";
+}
+
+// Nettoie les div dans le body-content avant d'afficher un autre graphe
+function cleanDiv(){
+	document.getElementById("body-content-text").innerHTML = "";
+	document.getElementById("body-content-specific").innerHTML = "";
+	document.getElementById("body-content-graph").innerHTML = "";
+	document.getElementById("body-content-specific-low").innerHTML = "";
+}
