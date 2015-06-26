@@ -21,7 +21,6 @@ body {
 
 .body-content{
 	visibility:visible;
-	opacity: 0;
 	-webkit-transition: height 3s;
 	transition: height 3s;
 }
