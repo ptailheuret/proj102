@@ -496,7 +496,7 @@ if(isChrome || isSafari || isOpera){
 	if(isOpera){
 		navigateur = "Opera";
 	}
-	document.getElementById("body-content-text").innerHTML = "D'après mes informations vous êtes venu sur ce site avec le navigateur"+ navigateur +".</br></br>Notre visualisation maison ne marche pas sur"+ navigateur + "</br></br></br>Cependant vous pouvez quand même voir d'autres choses comme la treemap ou encore le nuage de mots, mais il y a aussi d'autres navigateurs. Comme Firefox qui est compatible.</br>";
+	document.getElementById("body-content-text").innerHTML = "D'après mes informations vous êtes venu sur ce site avec le navigateur "+ navigateur +".</br></br>Notre visualisation maison ne marche pas sur "+ navigateur + "</br></br></br>Cependant vous pouvez quand même voir d'autres choses comme la treemap ou encore le nuage de mots, mais il y a aussi d'autres navigateurs. Comme Firefox qui est compatible.</br>";
 }
 
 
