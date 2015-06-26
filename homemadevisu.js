@@ -486,8 +486,17 @@ function retour(evt){
 
 if(isChrome || isSafari || isOpera){
 	cleanDiv();
-	
-	document.getElementById("body-content-text").innerHTML = "Si vous êtes sous Chrome cette visualisation risque de ne pas fonctionner correctement. Il y en a d'autres !</br></br></br>Des visualisations: comme la treemap ou encore le nuage de mots, mais il y a aussi d'autres navigateurs. Comme Firefox qui est compatible</br>";
+	var navigator;
+	if(isChrome){
+		navigator = "Chrome";
+	}
+	if(isSafari){
+		navigator = "Safari";
+	}
+	if(isOpera){
+		navigator = "Opera";
+	}
+	document.getElementById("body-content-text").innerHTML = "D'après mes informations vous êtes venu sur ce site avec le navigateur"+ navigator +".</br></br>Notre visualisation maison ne marche pas sur"+ navigator + "</br></br></br>Cependant vous pouvez quand même voir d'autres choses comme la treemap ou encore le nuage de mots, mais il y a aussi d'autres navigateurs. Comme Firefox qui est compatible.</br>";
 }
 
 
