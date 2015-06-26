@@ -63,7 +63,7 @@
 	<body oncontextmenu="return false;">
 
 	<button onclick="abstractButton()">Vision synthétique</button>
-	<button onclick="<a href='./index.html'></a>">Relancer la homemadevisu</button>
+	<button><a href='./index.html'>Relancer la homemadevisu</a></button>
 		
 	<div class="body">
 		<a href="./index.html" title="Analyse des débats présidentiels français - Home">
