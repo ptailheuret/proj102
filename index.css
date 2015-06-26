@@ -1,31 +1,32 @@
 body {
-		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-family: 'Open Sans', sans-serif;
 		  margin: auto;
 		  position: relative;
 		  width: 100%;
 		}
 		
 #header {
-		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  font-family: 'Open Sans', sans-serif;
 		  margin: auto;
 		  position: relative;
 		  width: 100%;
 		}
 		
 #footer {
-		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		  margin: auto;
-		  position: relative;
+		  font-family: 'Open Sans', sans-serif;
+		  margin-top: 60px;
+		  position: absolute;
+			bottom:0;
 		  width: 100%;
-			background: #E8E8E8 none repeat scroll 0% 0%;
-			border-top: 1px solid #000000;
+			background: #f5f5f5 none repeat scroll 0% 0%;
+			border-top: 1px solid #e5e5e5;
 			padding-top: 7px;
 			padding-bottom: 0px;
 			height: 30px;
 		}
 		
 .body {
-		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  font-family: 'Open Sans', sans-serif;
 		  margin: auto;
 		  position: relative;
 		  width: 960px;
@@ -68,8 +69,8 @@ form {
 #masthead-container {
 	position: relative;
 	min-width: 0px;
-	background: #E8E8E8 none repeat scroll 0% 0%;
-	border-bottom: 1px solid #000000;
+	background: #f5f5f5 none repeat scroll 0% 0%;
+	border-bottom: 1px solid #e5e5e5;
 	padding-top: 7px;
 	padding-bottom: 8px;
 	height: 80px;
@@ -78,8 +79,7 @@ form {
 
 #masthead {
 	position:relative;
-	height:80px;
-	bottom:16px;
+
 }
 #masthead-left {
 		position:relative;
@@ -91,6 +91,7 @@ form {
 		position:relative;
 		float:left;
 		width:30%;
+		bottom:10px;
 }
 
 p.masthead-left-image {
@@ -103,31 +104,75 @@ p.masthead-left-image {
 img.image-centered{
 		display: block;
 		margin-left: auto;
-		margin-right: auto
+		margin-right: auto;
+		bottom:10px;
 }
 
 #masthead-left-text{
 		position:relative;
-		text-align: center;
+		text-align: left;
 		vertical-align: middle;
 		float:right;
+		width:70%;
+}
+
+#home-title{
+		position:relative;
+		text-align: left;
+		vertical-align: middle;
+		top:50%;
 		width:70%;
 }
 
 #masthead-center {
 		position:absolute;
 		text-align: center;
+		vertical-align: middle;
 		left:30%;
-		
+		height:50%;
 		bottom:0px;
-		width:40%;
+		width:20%;
 }
 #masthead-right {
 		position:absolute;
-		text-align: center;
-		right:0px;
-		bottom:0px;
-		width:30%;
+		vertical-align: middle;
+		right:6%;
+		bottom:-11px;
+		width:40%;
+		height:80px;
+}
+
+#masthead-right-selec{
+	position: relative;
+	width:100%
+	}
+	
+#masthead-right-button{
+position: relative;
+width:50%;
+right:0%;
+}
+
+select {
+  border: 1px solid #111;
+  background: #f5f5f5;
+  font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+  border: 1px solid #ccc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button{
+	font-family: 'Open Sans', sans-serif;
+}
+
+@media screen and (min-width: 0\0) {
+  select {
+    background: none;
+    padding: 5px;
+  }
 }
 
 
