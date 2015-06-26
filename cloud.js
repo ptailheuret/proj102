@@ -1,14 +1,24 @@
 // Mise en place du texte
 
 function writeTextCloud(){
+
+texte.style("opacity",0);
+
+texte.transition()        
+          .duration(2000)      
+          .style("opacity", 1); 
+					
 document.getElementById("body-content-text").innerHTML = "Cliquez sur les mots pour voir le contexte.";
+
+
 }
 
 var dataset, tableauDebat;
 var leftdata, rightdata;
 var cloudPoliticianLeft, cloudPoliticianRight;
-var contexte= d3.select("#body-content-specific-low")            
-          .style("opacity", 0);
+
+var texte= d3.select("#body-content-text");
+var contexte= d3.select("#body-content-specific-low");
 
 var cloudGauche = true;
 

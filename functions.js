@@ -59,8 +59,9 @@ var theme = function(ev){
 		cleanDiv();
 		tm = new Treemap();
 		tm.createTreemap();
-		loadgraph();
 		writeTextTreemap();
+		unloadgraph();
+		loadyear();
 		storedTheme = 'select-treemap';
 		showTooltip("Sélectionnez une année de débat", "select-treemap" , 80, 10, true, 0);
 		}
@@ -68,10 +69,11 @@ var theme = function(ev){
 
 	case 'select-cloud':{
 		cleanDiv();
-		loadgraph();
 		cl = new Cloud();
 		cl.createCloud();
 		writeTextCloud();
+		unloadgraph();
+		loadyear();
 		storedTheme = 'select-cloud';
 		showTooltip("Sélectionnez une année de débat", "select-cloud" , 80, 10, true, 0);
 		}
@@ -79,7 +81,6 @@ var theme = function(ev){
 
 	case 'select-homemadevisu':{
 		cleanDiv();
-		loadgraph();
 		writeTextHomeMadeVisu();
 		writeSpecificContentHomeMadeVisu();
 		g();
@@ -101,11 +102,13 @@ var annee = function(ev){
 				case 'select-treemap':{
 					writeSpecificContentTreemap();
 					switchData('json/debat1981.json');
+					loadgraph();
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
 				break;
 				case 'select-cloud':{
 					cl.loadButtons(1981);
+					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
 				}
 				break;
@@ -118,11 +121,13 @@ var annee = function(ev){
 				case 'select-treemap':{
 					writeSpecificContentTreemap();
 					switchData('json/debat1988.json');
+					loadgraph();
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
 				break;
 				case 'select-cloud':{
 					cl.loadButtons(1988);
+					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
 				}
 				break;
@@ -135,11 +140,13 @@ var annee = function(ev){
 				case 'select-treemap':{
 					writeSpecificContentTreemap();
 					tm.switchData('json/flare.json');
+					loadgraph();
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
 				break;
 				case 'select-cloud':{
 					cl.loadButtons(1995);
+					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
 				}
 				break;
@@ -152,11 +159,13 @@ var annee = function(ev){
 				case 'select-treemap':{
 					writeSpecificContentTreemap();
 					tm.switchData('json/debat2007.json');
+					loadgraph();
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
 				break;
 				case 'select-cloud':{
 					cl.loadButtons(2007);
+					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
 				}
 				break;
@@ -168,7 +177,16 @@ var annee = function(ev){
 
 // Affiche le contenu du "body-content"
 function loadgraph(){
-	document.getElementById("body-content").style.visibility = "visible";
+	d3.select("#body-content-graph").transition()        
+          .duration(2000)      
+          .style("opacity", 1); 
+}
+
+function unloadgraph(){
+	d3.select("#body-content-graph").style("opacity", 0); 
+}
+
+function loadyear(){
 	document.getElementById("select-visu-spec").style.visibility = "visible";
 }
 
