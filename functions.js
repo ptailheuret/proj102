@@ -103,10 +103,12 @@ var annee = function(ev){
 					switchData('json/debat1981.json');
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
+				break;
 				case 'select-cloud':{
 					cl.loadButtons(1981);
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
-				}		
+				}
+				break;
 			}
 		}
 		break;
@@ -118,10 +120,12 @@ var annee = function(ev){
 					switchData('json/debat1988.json');
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
+				break;
 				case 'select-cloud':{
 					cl.loadButtons(1988);
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
-				}		
+				}
+				break;
 			}
 		}
 		break;
@@ -133,10 +137,12 @@ var annee = function(ev){
 					tm.switchData('json/flare.json');
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
+				break;
 				case 'select-cloud':{
 					cl.loadButtons(1995);
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
-				}	
+				}
+				break;
 			}
 		}
 		break;
@@ -148,10 +154,12 @@ var annee = function(ev){
 					tm.switchData('json/debat2007.json');
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
+				break;
 				case 'select-cloud':{
 					cl.loadButtons(2007);
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
-				}		
+				}
+				break;
 			}
 		}
 		break;

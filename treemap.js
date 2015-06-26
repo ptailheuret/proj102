@@ -4,7 +4,17 @@ function writeTextTreemap(){
 document.getElementById("body-content-text").innerHTML = 'Introduced by Ben Shneiderman in 1991, a treemap recursively subdivides area into rectangles. As with adjacency diagrams, the size of any node in the tree is quickly revealed. “Squarified” treemaps use approximately-square rectangles, which offer better readability and size estimation than naïve “slice-and-dice” subdivision. Fancier algorithms such as Voronoi and jigsaw treemaps also exist but are less common.';
 }
 
+var specificContent = d3.select("#body-content-specific")            
+          .style("opacity", 0);
 function writeSpecificContentTreemap(){
+specificContent.style("opacity", 0);
+
+
+specificContent          
+					.transition()        
+          .duration(3000)      
+          .style("opacity", 1);
+					
 document.getElementById("body-content-specific").innerHTML = '<div id="container">\
 				<div id="left">Le candidat de gauche est: <span id="gauche"></span></div>\
 				<div id="center"><span id="centre"></span></div>\
