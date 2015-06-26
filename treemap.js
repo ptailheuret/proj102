@@ -59,14 +59,8 @@ var Treemap = (function(){
 					.style("height", (height + margin.top + margin.bottom) + "px")
 					.style("left", margin.left + "px")
 					.style("top", margin.top + "px")
-
-		// Création du tooltip
-		tooltip = d3.select("body").append("div")   
-					.attr("class", "tooltip")               
-					.style("opacity", 0);
-
-};
-
+					
+		};
 
 
 		// Mode zoom si true
@@ -120,6 +114,7 @@ var Treemap = (function(){
 					.value(function(d) { return d.size; });
 		
 				document.getElementById("treemap").innerHTML = "";
+				d3.select("#treemap-tooltip").remove();
 	
 			drawTreemap(datajson)
 		}
@@ -134,6 +129,13 @@ var Treemap = (function(){
 				nodes = treemap.nodes(root);
 
 				var visu_node = null;
+				
+						// Création du tooltip
+		tooltip = d3.select("body").append("div")   
+					.attr("class", "tooltip").attr("id","treemap-tooltip")               
+					.style("opacity", 0)
+					.style("left","50px")
+					.style("top", "50px");
 
 				//Crée les noeuds 
 				visu_node = div.datum(root).selectAll(".node")
