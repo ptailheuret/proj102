@@ -96,7 +96,18 @@ function changement(année,parti){
 }
 
 function changementTreeMap(){
-	svgg.transition()
+
+	cleanDiv();
+		tm = new Treemap();
+		tm.createTreemap();
+		writeTextTreemap();
+		unloadgraph();
+writeSpecificContentTreemap();
+					tm.switchData('json/debat2007.json');
+					loadgraph();
+					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
+
+	/*svgg.transition()
 		.attr("width",100)
 
 	SVGC.transition()
@@ -113,7 +124,7 @@ function changementTreeMap(){
 	  .select("svg")
 	  .selectAll("text")
 	    .transition()
-		.each("end",function(){d3.select(this).remove();})
+		.each("end",function(){d3.select(this).remove();})*/
 }
 		
 var svgg=d3.select("#body-content-graph")

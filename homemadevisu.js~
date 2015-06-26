@@ -184,7 +184,7 @@ tabThemes=["économie","sécurité","inégalités","justice"];
 		.attr("transform","translate(500,500) rotate("+angle+")")
 		.attr("id",function(d){return angle;})
 			.selectAll("circle")
-			.data(données)
+			.data(tabPoids)
 			.enter().append("circle")
 			  .attr("id",function(d){return tabThemes[tabPoids.indexOf(d)];})
 			  .attr("name","1981")
