@@ -13,6 +13,7 @@
 		<div id="header" onmouse="affichageTooltip()">
 			<!-- Container du logo, contient le logo et le bouton de la navbar -->
 			<div id="masthead-container"> 
+			<a href="https://github.com/ptailheuret/ptailheuret.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 				<div id="masthead">
 					<div id="masthead-left">
 						<div id="masthead-left-image">
@@ -63,9 +64,9 @@
 	<body oncontextmenu="return false;">
 
 	<button onclick="abstractButton()">Vision synthétique</button>
-	<button><a href='./index.html'>Relancer la homemadevisu</a></button>
+	<!-- <button><a href='./index.html'>Relancer la homemadevisu</a></button> -->
 		
-	<div class="body">
+	<div class="body" style="min-height:900px">
 		<a href="./index.html" title="Analyse des débats présidentiels français - Home">
 			<h1>Analyse des débats présidentiels français</h1>
 			<h3>La vérité dévoilée, de 1981 à 2007</h3>
@@ -77,15 +78,20 @@
 		<div id="body-content">
 			<!-- C'est le texte de présentation du graphe affiché -->
 			<div id="body-content-text" class="body-content">
-			Cette visualisation est complexe. Description à venir
+			Cette visualisation permet de voir de façon globale les données mises en jeu. L'année du débat, les thèmes.</br>
+			Elle fait office de HUB vers les autres visualisations.
 			</div>
 			</br>
 			<!-- C'est le contenu (textuel) spécifique au graphe affiché -->
-			<div id="body-content-specific" class="body-content" style="opacity:0;"> </div>
+			<div id="body-content-specific" class="body-content">
+			Si vous êtes sous Chrome cette visualisation risque de ne pas fonctionner correctement. Il y en a d'autres !</br>Des visualisations: comme la 
+			treemap ou encore le nuage de mots, mais il y a aussi d'autres navigateurs. Comme Firefox qui est compatible</br></br></br>
+			</div>
 			<!-- C'est le graph -->
 			<div id="body-content-graph" class="body-content"> </div>
 			<div id="body-content-specific-low" class="body-content" style="min-height:80px"> </div>
 		</div>
+				
 	
 		
 		<script src="functions.js"></script>
@@ -99,4 +105,11 @@
 	
 	</body>
 	</div>
+	
+		<footer>
+			<div id="footer">
+				<span style="float:left" onclick="callAbout()" style="a:hover: text-decoration:underline;"><a>A propos du projet et de l'équipe</a></span>
+				<span style="float:right">Juin 2015</span>
+			</div>
+	</footer>
 </html>

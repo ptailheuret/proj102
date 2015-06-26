@@ -209,5 +209,23 @@ function cleanDiv(){
 }
 
 function showTooltipSpec(){
-showTooltip("Cherchez des mots dans le words cloud", "search-bar" , 45, 7, true, 0);
+showTooltip("Cherchez des mots dans le words cloud. Tapez un mot, puis appuyez sur \"Entrée\"", "search-bar" , 45, 7, true, 0);
+}
+
+function callAbout(){
+
+cleanDiv();
+d3.select("#body-content-specific").style("opacity",0);
+d3.select(".body-content").style("opacity",0);
+
+d3.select(".body-content").transition()        
+          .duration(1000)      
+          .style("opacity", 1); 
+d3.select("#body-content-specific").transition()        
+          .duration(1000)      
+          .style("opacity", 1); 
+	
+document.getElementById("body-content-text").innerHTML = '<h3>Description du projet</h3></br>Comment évoluent les stratégies de communication adoptées par les candidats lors des élections présidentielles ? Quels sont les thèmes de prédilection des candidats lors d’une élection? Ces analyses, réalisées par des sociologues et des journalistes, font de plus en plus appel à des techniques de fouilles de données textuelles avec le récent engouement de la communauté journalistique pour le “data-journalisme” ou journalisme de données.</br>De manière générale, la fouille de données ou data mining consiste en le développement de méthodes pour l’exploration et l’analyse de gros volumes de données. L’objectif est de faire émerger de ces données des structures à l’origine invisibles par un analyste humain. Les méthodes impliquées relèvent des domaines de l’intelligence artificielle, de l’apprentissage, des statistiques et des systèmes de bases de données.</br>L’objectif de ce projet est d’imaginer et de développer une interface de navigation dans les transcriptions des débats des présidentielles qui permettent aux journalistes et sociologues d’étayer leurs analyses.</br>Cette interface pourra proposer :</br><ul><li>Des méthodes statistiques de fouille de données textuelles intégrant différents niveaux de complexité (ex: fréquences de mots, calcul de similarité, classification), afin d’extraire par exemple les caractéristiques lexicales discriminant les débats d’un candidat par rapport à un autre.</li><li>Une interface de visualisation des résultats des analyses et de navigation dans les débats sera imaginée et développée.</li></ul>'
+			
+document.getElementById("body-content-specific").innerHTML = "Les membres de l'équipe(par ordre alphabétique)<ul><li>Groupe analyse de données:</li><ul><li>Benjamin Battino</li><li>Martin Chochod</li><li>Dimitri Garcia</li></ul><li>Groupe visualisation</li><ul><li>Anthony Hu</li><li>Patrick Tailheuret</li><li>Rémy Soukarie</li></ul></ul>";
 }

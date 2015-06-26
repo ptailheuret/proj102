@@ -12,6 +12,18 @@ body {
 		  width: 100%;
 		}
 		
+#footer {
+		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  margin: auto;
+		  position: relative;
+		  width: 100%;
+			background: #E8E8E8 none repeat scroll 0% 0%;
+			border-top: 1px solid #000000;
+			padding-top: 7px;
+			padding-bottom: 0px;
+			height: 30px;
+		}
+		
 .body {
 		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		  margin: auto;
@@ -333,7 +345,7 @@ text-transform:inherit;
 #menu-demo2 li:hover a, #menu-demo2 li li:hover a{
 color:#000;
 }
-
+/*
   .tftextinput2{
     margin: 0;
     padding: 5px 15px;
@@ -368,10 +380,11 @@ color:#000;
     background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
     background: -moz-linear-gradient(top,  #0095cc,  #00678e);
   }
-  /* Fixes submit button height problem in Firefox */
+
   .tfbutton2::-moz-focus-inner {
     border: 0;
   }
   .tfclear{
     clear:both;
   }
+*/
