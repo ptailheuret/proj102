@@ -32,7 +32,7 @@ function reset(){
 	svgg.transition()
 		.attr("width", 1000)
             .attr("height", 1000)
-		.attr("id","homemade-visu")
+		.attr("id","homemade-visu1")
 		
 	contexte.transition()
 			.style("opacity",0)
@@ -42,14 +42,14 @@ function reset(){
 		
 	var numberOfCircles=document.getElementsByTagName("circle").length;		
 	if(numberOfCircles==1){
-		slicePizza(1981,"gauche",circles1);
-		slicePizza(1981,"droite",circles1);
-		slicePizza(1988,"gauche",circles1);
-		slicePizza(1988,"droite",circles1);
-		slicePizza(1995,"gauche",circles1);
-		slicePizza(1995,"droite",circles1);
-		slicePizza(2007,"gauche",circles1);
-		slicePizza(2007,"droite",circles1);
+		slicePizza(1981,"gauche");
+		slicePizza(1981,"droite");
+		slicePizza(1988,"gauche");
+		slicePizza(1988,"droite");
+		slicePizza(1995,"gauche");
+		slicePizza(1995,"droite");
+		slicePizza(2007,"gauche");
+		slicePizza(2007,"droite");
 	}
 	
 	creerTexte();
@@ -151,16 +151,33 @@ var circles1=[10,8,4,2];
 var circles2=[11,14,6,3];
 var c1=["1981","1988","1988","1988"];
 	
-function slicePizza(année,parti,données){
+function slicePizza(année,parti){
 	switch(année){
-		case 1981: if(parti=="gauche"){creerSlice(225,données);} else {creerSlice(270,données);} break;
-		case 1988: if(parti=="gauche"){creerSlice(180,données);} else {creerSlice(315,données);} break;
-		case 1995: if(parti=="gauche"){creerSlice(135,données);} else {creerSlice(0,données);} break;
-		case 2007: if(parti=="gauche"){creerSlice(90,données);} else {creerSlice(45,données);} break;
+		case 1981: if(parti=="gauche"){creerSlice(225);} else {creerSlice(270);} break;
+		case 1988: if(parti=="gauche"){creerSlice(180);} else {creerSlice(315);} break;
+		case 1995: if(parti=="gauche"){creerSlice(135);} else {creerSlice(0);} break;
+		case 2007: if(parti=="gauche"){creerSlice(90);} else {creerSlice(45);} break;
 	}
 }
-		
-function creerSlice(angle,données){
+		var tabThemes, tabPoids;
+function creerSlice(angle){
+
+tabThemes=["économie","sécurité","inégalités","justice"];
+
+  switch(angle){
+          case 0:tabPoids=["9","4","17","9"];break;
+          case 45:tabPoids=["15","7","17","14"];break;
+          case 90:tabPoids=["7","10","23","12"];break;
+          case 135:tabPoids=["10","3","11","2"];break;
+          case 180:tabPoids=["4","12","10","6"];break;
+          case 225:tabPoids=["2","4","6","10"];break;
+          case 270:tabPoids=["9","12","10","6"];break;
+          case 315:tabPoids=["3","2","3","22"];break;
+  }
+
+  var scale=d3.scale.linear()
+                .domain([1,30])
+                .range([4,13]);
 
 	d3.select("svg")
 	  .append("svg")
@@ -169,11 +186,11 @@ function creerSlice(angle,données){
 			.selectAll("circle")
 			.data(données)
 			.enter().append("circle")
-			  .attr("id",function(d){return "circle"+d;})
+			  .attr("id",function(d){return tabThemes[tabPoids.indexOf(d)];})
 			  .attr("name","1981")
-			  .attr("r",function(d){return 3*d;})
+			  .attr("r",function(d){return 3*scale(d);})
 			  .attr("cx",function(d){return (1+Math.sqrt(2))*3*1.5*d+(500/(Math.sqrt(2))-(2+Math.sqrt(2))*3*1.5*d)*Math.random();})
-			  .attr("cy",function(d){return calculCY("circle"+d);})
+			  .attr("cy",function(d){return calculCY(tabThemes[tabPoids.indexOf(d)]);})
 			  .attr("fill",function(d){if(angle>=90 && angle <=225){return redCircles(d);} else {return blueCircles(d);}})
 			  .attr("onclick","changementTreeMap()")
 			  .attr("cursor","pointer");
@@ -189,14 +206,14 @@ function calculCY(id){
 creerTexteD(d1);
 creerTexteG(d1);	
 		
-slicePizza(1981,"gauche",circles1);
-slicePizza(1981,"droite",circles1);
-slicePizza(1988,"gauche",circles1);
-slicePizza(1988,"droite",circles1);
-slicePizza(1995,"gauche",circles1);
-slicePizza(1995,"droite",circles1);
-slicePizza(2007,"gauche",circles1);
-slicePizza(2007,"droite",circles1);
+slicePizza(1981,"gauche");
+slicePizza(1981,"droite");
+slicePizza(1988,"gauche");
+slicePizza(1988,"droite");
+slicePizza(1995,"gauche");
+slicePizza(1995,"droite");
+slicePizza(2007,"gauche");
+slicePizza(2007,"droite");
 		
 function creerTexte(){
 
@@ -235,7 +252,7 @@ function creerTexte(){
 					.attr("x",function(d){return d.getAttribute("cx")-1.5*d.getAttribute("r");})
 					.attr("y",function(d){return d.getAttribute("cy");})
 					.attr("transform",function(d){return "rotate("+angleC+","+d.getAttribute("cx")+","+d.getAttribute("cy")+")";})
-					.attr("id",function(d){return d.getAttribute("id")+"t";})
+					.attr("id",function(d){return d.getAttribute("id");})
 				
 		var tab=document.getElementsByTagName("text");
 		var limit=tab.length;

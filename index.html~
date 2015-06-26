@@ -34,7 +34,7 @@
 					    <form id="tfnewsearch" method="get" action="javascript:void()" 
 					        onSubmit="if(this.tfq.value!=null && this.tfq.value!='')
 					        parent.findString(this.tfq.value);return false;">
-					            <input type="text" id="tfq" class="tftextinput2" name="q" size="20" maxlength="120" value="" onmouseover='showTooltipSpec()'>
+					            <input type="text" id="tfq" class="tftextinput2" name="q" size="40" maxlength="120" value="" onmouseover='showTooltipSpec()'>
 					    </form>
 					    <div class="tfclear"></div>
 					</div>
@@ -63,7 +63,7 @@
 	<body oncontextmenu="return false;">
 
 	<button onclick="abstractButton()">Vision synthétique</button>
-	<button onclick="reset()">Relancer la homemadevisu</button>
+	<button onclick="<a href='./index.html'></a>">Relancer la homemadevisu</button>
 		
 	<div class="body">
 		<a href="./index.html" title="Analyse des débats présidentiels français - Home">
