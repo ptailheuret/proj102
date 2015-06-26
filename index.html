@@ -2,6 +2,8 @@
 <html>
 	<head>
 	<meta charset="utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<form visibility : hidden>
 	  <label><input id = "size" type="radio" name="mode" value="size" checked> Size</label>
@@ -24,11 +26,9 @@
 							</p>
 						</div>
 						<div id="masthead-left-text">
-							<p class="masthead-left-text">
 								<a href="http://paf.telecom-paristech.fr" target="_blank"
-								 title="Site du projet PAF"><h2>PAF - PROJ102</h2>
+								 title="Site du projet PAF" id="home-title"><h2>PAF - PROJ102</h2>
 								</a>
-							</p>
 						</div>
 					</div>
 					<div id="masthead-center">
@@ -40,21 +40,26 @@
 					    <div class="tfclear"></div>
 					</div>
 					<div id="masthead-right">
-						 <select id="select-visu" name="Sélectionner votre représentation !">
-							<option id = "default" selected >Choisissez votre visualisation</option>
-							<!--- <option id="select-homemadevisu">Homemade visualization</option> -->
-							<option id="select-treemap">Treemap</option>
-							<option id="select-cloud">Words Cloud</option>
-						</select>
-						<select id="select-visu-spec" name="Choisissez l'année du débat !" style="visibility:hidden">
-							<option id = "default" selected >Choisissez l'année du débat</option>
-							<option id="select-1981">1981</option>
-							<option id="select-1988">1988</option>
-							<option id="select-1995">1995</option>
-							<option id="select-2007">2007</option>
-						</select>
-						<button id="cancelbutton" onclick="cancelTooltip()">Désactiver les infobulles</button>
-						<button id="tooltipisbackbutton" onclick="tooltipIsBack()" style="visibility:hidden">Activer les infobulles</button>
+						<div id="masthead-right-selec">
+							<select id="select-visu" name="Sélectionner votre représentation !">
+								<option id = "default" selected >Choisissez votre visualisation</option>
+								<!--- <option id="select-homemadevisu">Homemade visualization</option> -->
+								<option id="select-treemap">Treemap</option>
+								<option id="select-cloud">Words Cloud</option>
+							</select>
+							<select id="select-visu-spec" name="Choisissez l'année du débat !" style="visibility:hidden">
+								<option id = "default" selected >Choisissez l'année du débat</option>
+								<option id="select-1981">1981</option>
+								<option id="select-1988">1988</option>
+								<option id="select-1995">1995</option>
+								<option id="select-2007">2007</option>
+							</select>
+						</div>
+						<div id="masthead-right-buttons">
+							<button onclick="abstractButton()">Vision synthétique</button>
+							<button id="cancelbutton" onclick="cancelTooltip()">Désactiver les infobulles</button>
+							<button id="tooltipisbackbutton" onclick="tooltipIsBack()" style="visibility:hidden">Activer les infobulles</button>
+						</div>
 					</div>    
 				</div>
 			</div>
@@ -63,7 +68,6 @@
 	
 	<body oncontextmenu="return false;">
 
-	<button onclick="abstractButton()">Vision synthétique</button>
 	<!-- <button><a href='./index.html'>Relancer la homemadevisu</a></button> -->
 		
 	<div class="body" style="min-height:800px">
