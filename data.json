@@ -2,28 +2,46 @@
 
 {"articles": [], 
 "total": 0, "name": "Economie"},
-{"articles": [[1981, 2], [1988, 4], [1995, 10], [2007, 7]], 
+{"articles": [[1981, 10], [1988, 3], [1995, 32], [2007, 6]], 
 "total": 23, "name": "(gauche)"}, 
-{"articles": [[1981, 9], [1988, 3], [1995, 9], [2007, 15]], 
+{"articles": [[1981, 13], [1988, 14], [1995, 7], [2007, 20]], 
 "total": 36, "name": "(droite)"},
 
-{"articles": [], 
-"total": 0, "name": "Sécurité"},
-{"articles": [[1981, 4], [1988, 12], [1995, 3], [2007, 10]], 
-"total": 29, "name": "(gauche)"}, 
-{"articles": [[1981, 12], [1988, 2], [1995, 4], [2007, 7]], 
-"total": 25, "name": "(droite)"},
 
 {"articles": [], 
-"total": 0, "name": "Inégalités"},
-{"articles": [[1981, 6], [1988, 10], [1995, 11], [2007, 23]], 
+"total": 0, "name": "Education"},
+{"articles": [[1988, 12], [1995, 3],[2007, 41]], 
 "total": 50, "name": "(gauche)"}, 
-{"articles": [[1981, 10], [1988, 3], [1995, 17], [2007, 17]], 
+{"articles": [[1981, 12], [1988, 20],[2007, 8]], 
 "total": 47, "name": "(droite)"},
 
 {"articles": [], 
-"total": 0, "name": "Justice"},
-{"articles": [[1981, 10], [1988, 6], [1995, 2], [2007, 12]], 
-"total": 40, "name": "(gauche)"}, 
-{"articles": [[1981, 6], [1988, 22], [1995, 9], [2007, 14]], 
-"total": 51, "name": "(droite)"}]
+"total": 0, "name": "Energie/Ecologie"},
+{"articles": [[1995, 11], [2007, 5]], 
+"total": 50, "name": "(gauche)"}, 
+{"articles": [[1981, 10], [1988, 3],[2007, 16]], 
+"total": 47, "name": "(droite)"},
+
+{"articles": [], 
+"total": 0, "name": "Nation"},
+{"articles": [[1981,25],[2007, 61]], 
+"total": 50, "name": "(gauche)"}, 
+{"articles": [[1981,35],[1988, 12],[1995,67]], 
+"total": 5, "name": "(droite)"},
+
+{"articles": [], 
+"total": 0, "name": "Chômage"},
+{"articles": [[1988,1],[1995,8]], 
+"total": 50, "name": "(gauche)"}, 
+{"articles": [[1988, 9],[2007,4]], 
+"total": 5, "name": "(droite)"},
+
+{"articles": [], 
+"total": 0, "name": "Immigration"},
+{"articles": [[1988, 7],[2007, 12]], 
+"total": 50, "name": "(gauche)"}, 
+{"articles": [[1988, 3],[1995,26]], 
+"total": 5, "name": "(droite)"}
+
+
+]

@@ -207,3 +207,7 @@ function cleanDiv(){
 	document.getElementById("body-content-graph").innerHTML = "";
 	document.getElementById("body-content-specific-low").innerHTML = "";
 }
+
+function showTooltipSpec(){
+showTooltip("Cherchez des mots dans le words cloud", "search-bar" , 45, 7, true, 0);
+}

@@ -1,0 +1,195 @@
+body {
+		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  margin: auto;
+		  position: relative;
+		  width: 100%;
+		}
+		
+#header {
+		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  margin: auto;
+		  position: relative;
+		  width: 100%;
+		}
+		
+.body {
+		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  margin: auto;
+		  position: relative;
+		  width: 960px;
+		}
+
+.body-content{
+	visibility:visible;
+	-webkit-transition: height 3s;
+	transition: height 3s;
+}
+
+a:link {
+    color:#000000;
+    background-color:transparent;
+    text-decoration:none;
+}
+a:visited {
+    color:#000000;
+    background-color:transparent;
+    text-decoration:none;
+}
+a:hover {
+    color:#000000;
+    background-color:transparent;
+    text-decoration:underline;
+}
+a:active {
+    color:#ff0000;
+    background-color:transparent;
+    text-decoration:underline;
+}
+
+
+form {
+	position: relative;
+	/*right: 10px;
+	top: 10px;*/
+}
+
+#masthead-container {
+	position: relative;
+	min-width: 0px;
+	background: #E8E8E8 none repeat scroll 0% 0%;
+	border-bottom: 1px solid #000000;
+	padding-top: 7px;
+	padding-bottom: 8px;
+	height: 80px;
+	width:100%;
+}
+
+#masthead {
+	position:relative;
+	height:80px;
+	bottom:16px;
+}
+#masthead-left {
+		position:relative;
+		width:30%;
+		height:80px;
+}
+
+#masthead-left-image {
+		position:relative;
+		float:left;
+		width:30%;
+}
+
+p.masthead-left-image {
+		margin-left: auto;
+		margin-right: auto;
+		left:0px;
+		bottom:0px;
+}
+
+img.image-centered{
+		display: block;
+		margin-left: auto;
+		margin-right: auto
+}
+
+#masthead-left-text{
+		position:relative;
+		text-align: center;
+		vertical-align: middle;
+		float:right;
+		width:70%;
+}
+
+#masthead-center {
+		position:absolute;
+		text-align: center;
+		left:30%;
+		
+		bottom:0px;
+		width:40%;
+}
+#masthead-right {
+		position:absolute;
+		text-align: center;
+		right:0px;
+		bottom:0px;
+		width:30%;
+}
+
+
+#container {
+		position:relative;
+		height:70px;
+		width:100%;
+}
+#container div {
+		width:200px;
+}
+#left {
+		position:absolute;
+		text-align: center;
+		left:0px;
+		bottom:0px;
+}
+#center {
+		position:absolute;
+		text-align: center;
+		left:50%;
+		margin-left:-100px;
+		bottom:0px;
+}
+#right {
+		position:absolute;
+		text-align: center;
+		right:0px;
+		bottom:0px;
+}
+
+.node {
+	border: solid 1px white;
+	font: 10px sans-serif;
+	line-height: 12px;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 2px;
+
+	// Transition pour les noeuds à ajouter
+	/*-webkit-transition: opacity 2s;
+	transition: opacity 2s;*/
+}
+
+div.tooltip {   
+	position: absolute;           
+	text-align: center;           
+	width: 180px;                  
+	height: 55px;                 
+	padding: 5px;             
+	font: 12px sans-serif;        
+	background: white;   
+	border: 0px;      
+	border-radius: 8px;           
+	pointer-events: none;         
+}
+
+div.tooltipbody{   
+	position: absolute;           
+	text-align: center;    
+	width: 180px;                  
+	height: auto;                 
+	padding: 10px;             
+	color:white;
+	font: 12px sans-serif;        
+	background: grey;   
+	border: 0px;      
+	border-radius: 8px;           
+	pointer-events: none;         
+}
+
+.axis path,.axis line {fill: none;stroke:#b6b6b6;shape-rendering: crispEdges;}
+/*.tick line{fill:none;stroke:none;}*/
+.tick text{fill:#999;}
+g.journal.active{cursor:pointer;}
+text.label{font-size:12px;font-weight:bold;cursor:pointer;}
+text.value{font-size:12px;font-weight:bold;}

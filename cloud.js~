@@ -1,23 +1,43 @@
 // Mise en place du texte
 
 function writeTextCloud(){
-document.getElementById("body-content-text").innerHTML = "Words Clouds are beautiful, more details incoming";
+
+texte.style("opacity",0);
+
+texte.transition()        
+          .duration(2000)      
+          .style("opacity", 1); 
+					
+document.getElementById("body-content-text").innerHTML = "Cliquez sur les mots pour voir le contexte.";
+
+
 }
 
+var dataset, tableauDebat;
+var leftdata, rightdata;
+var cloudPoliticianLeft, cloudPoliticianRight;
 
+var texte= d3.select("#body-content-text");
+var contexte= d3.select("#body-content-specific-low");
 
-var dataset;
+var cloudGauche = true;
 
 //va chercher dans le texte brut la phrase correspondant au mot cliqué
    	var changePar = function(evt){
 
-			console.log("hi");
-
       for (var k=0;k<dataset.length;k++) {
+				contexte.style("opacity",0);
         switch(evt.target.id) {
           case dataset[k].texte:
           var i = Math.floor(Math.random()*(dataset[k].position.length)) + 1;
-          document.getElementById("body-content-specific").innerHTML = "<b><u>Contexte du mot</b></u> (" + i + "/" + dataset[k].position.length +  ") : <br></br>" + creerPhrase(tableauDebat,dataset[k].position[i-1]);
+					
+          // Le tooltip apparait progressivement (500ms)
+        contexte.transition()        
+          .duration(500)      
+          .style("opacity", 1);  
+
+          contexte.html("<b><u>Contexte du mot</b></u> (" + i + "/" + dataset[k].position.length +  ") : <br></br>" + creerPhrase(tableauDebat,dataset[k].position[i-1]));
+
           
           break;
         }
@@ -56,7 +76,7 @@ var Cloud = (function(){
 
 		var Cloud = function(){};
 
-var words, margin, width, height, tableauDebat, dessin;
+var words, margin, width, height, dessin;
 
 		Cloud.prototype.createCloud = function(){
 
@@ -78,7 +98,6 @@ var words, margin, width, height, tableauDebat, dessin;
 						      .attr("width", width)
 						      .attr("height", height)
 						    .append("g")
-						      .attr("transform", "translate(250,250)")
 						    .selectAll("text")
 
 		console.log("CreateCloud");
@@ -103,6 +122,39 @@ var words, margin, width, height, tableauDebat, dessin;
 		console.log("ChangerDonnees");
 
     }
+		
+		Cloud.prototype.loadButtons = function(year){
+			
+			switch(year){
+					case 1981:{
+
+				}
+				break;
+					case 1988:{
+
+				}
+				break;
+					case 1995:{
+				rightdata = ['csv/Chirac_dans_son_debat.csv', 'csv/TexteBrutChirac-Jospin1995.csv'];
+				leftdata = ['csv/Jospin_dans_son_debat.csv', 'csv/TexteBrutChirac-Jospin1995.csv'];
+				Cloud.prototype.changerDonnees(rightdata[0],rightdata[1]);
+				showTooltip("On commence avec Jacques Chirac!", "politician-name" , 70, 70, true, 200);
+				cloudPoliticianLeft = "Lionel Jospin";
+				cloudPoliticianRight = "Jacques Chirac";
+				}
+				break;
+					case 2007:{
+					rightdata = ['csv/Sarkozy_dans_son_debat.csv', 'csv/TexteBrutSarko-Sego2007.csv'];
+					leftdata = ['csv/Sego_dans_son_debat.csv', 'csv/TexteBrutSarko-Sego2007.csv'];
+					Cloud.prototype.changerDonnees(leftdata[0],leftdata[1]);
+					showTooltip("On commence avec Ségolène Royal!", "politician-name" , 70, 70, true, 200);
+					cloudPoliticianLeft = "Ségolène Royal";
+					cloudPoliticianRight = "Nicolas Sarkozy";
+				}
+				break;			
+			}
+			
+		}
 
 		
       /*fonction qui à partir d'un tableau comptenant les mots accompagnés de leurs pondérations
@@ -134,24 +186,52 @@ var words, margin, width, height, tableauDebat, dessin;
 
 				d3.select("#svgdessin").remove();
 
-        dessin = d3.select("#dessin").append("svg").attr("id","svgdessin")
-            .attr("width", width)
-            .attr("height", height)
-          .append("g")
-            .attr("transform", "translate(250,250)")
-          .selectAll("text")
-            .data(words)
-          .enter().append("text")
-            .style("font-size", function(d) { return d.size + "px"; })
-            .style("font-family", "Impact")
-            .style("fill", function(d, i) { return fill(i); })
-            .attr("text-anchor", "middle")
-		.attr("id",function(d){return d.text;})
-            .attr("transform", function(d) {
-              return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-            })
-            .text(function(d) { return d.text; })
-		.attr("onclick","changePar(evt)");
+        d3.select("#svgdessin").remove();
+
+            dessin = d3.select("#dessin").append("svg").attr("id","nuage")
+                .attr("width", width)
+                .attr("height", height)
+              .append("g")
+                .attr("transform", "translate(470,225)")
+              .selectAll("text")
+                .data(words)
+              .enter().append("text")
+                .style("font-size", function(d) { return d.size + "px"; })
+                .style("font-family", "Impact")
+                .style("fill", function(d, i) { return fill(i); })
+                .attr("text-anchor", "middle")
+				.attr("id",function(d){return d.text;})
+                .attr("transform", function(d) {
+                  return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .text(function(d) { return d.text; })
+				.attr("onclick","changePar(evt)")
+        .attr("cursor","pointer")
+		.on("contextmenu", function(){
+			if(!cloudGauche){
+				Cloud.prototype.changerDonnees(leftdata[0],leftdata[1]);
+				showTooltip("C'est au tour de "+ cloudPoliticianLeft +"!", "politician-name" , 70, 50, true, 0);
+				cloudGauche = true;
+			}
+			else{
+				Cloud.prototype.changerDonnees(rightdata[0],rightdata[1]);
+				showTooltip("C'est au tour de "+ cloudPoliticianRight +"!", "politician-name" , 70, 70, true, 0);
+				cloudGauche = false;
+			}
+			})
+			.on("mouseover", function(d){                     //augmente la transparence des autres mots lorsqu'on met la souris sur un mot-clé       
+        
+          //on met tout le nuage en transparent
+          dessin.style("opacity", 0.1); 
+
+          
+          //surbrillance du mot-clé courant
+          d3.select(this).style("opacity", 1);
+          }).on("mouseout",function(){        
+
+            //plus de transparence lorsque la souris est sur aucun mot  
+            dessin.style("opacity", 1);
+            });
       }
 
 return Cloud;

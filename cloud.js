@@ -127,16 +127,28 @@ var words, margin, width, height, dessin;
 			
 			switch(year){
 					case 1981:{
+          rightdata = ['csv/GiscardDansSonDebat.csv', 'csv/TexteBrutGiscardMiterrand1981.csv'];
+          leftdata = ['csv/MiterrandDansSonDebat1981.csv', 'csv/TexteBrutGiscardMiterrand1981.csv'];
+          Cloud.prototype.changerDonnees(leftdata[0],leftdata[1]);
+          showTooltip("On commence avec François Miterrand!", "politician-name" , 70, 70, true, 200);
+          cloudPoliticianLeft = "François Miterrand";
+          cloudPoliticianRight = "Valéry Giscard D'Estaing";
 
 				}
 				break;
 					case 1988:{
+          rightdata = ['csv/ChiracDansSonDebat1988.csv', 'csv/TexteBrutChiracMiterrand1988.csv'];
+          leftdata = ['csv/MiterrandDansSonDebat1988.csv', 'csv/TexteBrutChiracMiterrand1988.csv'];
+          Cloud.prototype.changerDonnees(leftdata[0],leftdata[1]);
+          showTooltip("On commence avec François Miterrand!", "politician-name" , 70, 70, true, 200);
+          cloudPoliticianLeft = "François Miterrand";
+          cloudPoliticianRight = "Jacques Chirac";
 
 				}
 				break;
 					case 1995:{
-				rightdata = ['csv/Chirac_dans_son_debat.csv', 'csv/TexteBrutChirac-Jospin1995.csv'];
-				leftdata = ['csv/Jospin_dans_son_debat.csv', 'csv/TexteBrutChirac-Jospin1995.csv'];
+				rightdata = ['csv/ChiracDansSonDebat1995.csv', 'csv/TexteBrutChiracJospin1995.csv'];
+				leftdata = ['csv/JospinDansSonDebat.csv', 'csv/TexteBrutChiracJospin1995.csv'];
 				Cloud.prototype.changerDonnees(rightdata[0],rightdata[1]);
 				showTooltip("On commence avec Jacques Chirac!", "politician-name" , 70, 70, true, 200);
 				cloudPoliticianLeft = "Lionel Jospin";
@@ -144,14 +156,14 @@ var words, margin, width, height, dessin;
 				}
 				break;
 					case 2007:{
-					rightdata = ['csv/Sarkozy_dans_son_debat.csv', 'csv/TexteBrutSarko-Sego2007.csv'];
-					leftdata = ['csv/Sego_dans_son_debat.csv', 'csv/TexteBrutSarko-Sego2007.csv'];
+					rightdata = ['csv/SarkozyDansSonDebat.csv', 'csv/TexteBrutSarkozyRoyal2007.csv'];
+					leftdata = ['csv/RoyalDansSonDebat.csv', 'csv/TexteBrutSarkozyRoyal2007.csv'];
 					Cloud.prototype.changerDonnees(leftdata[0],leftdata[1]);
 					showTooltip("On commence avec Ségolène Royal!", "politician-name" , 70, 70, true, 200);
 					cloudPoliticianLeft = "Ségolène Royal";
 					cloudPoliticianRight = "Nicolas Sarkozy";
 				}
-				break;			
+				break;				
 			}
 			
 		}
@@ -188,7 +200,7 @@ var words, margin, width, height, dessin;
 
         d3.select("#svgdessin").remove();
 
-            dessin = d3.select("#dessin").append("svg").attr("id","svgdessin")
+            dessin = d3.select("#dessin").append("svg").attr("id","nuage")
                 .attr("width", width)
                 .attr("height", height)
               .append("g")
