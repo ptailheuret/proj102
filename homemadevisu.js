@@ -8,7 +8,6 @@ function writeSpecificContentHomeMadeVisu(){
 document.getElementById("body-content-specific").innerHTML = "Veuillez nous excuser pour la gêne occasionnée, nous sommes en chantier. Si vous avez sélectionné la treemap, choissez une année !";
 }
 
-
 function reset(){
 
 	var nuageSVG=document.getElementById("nuage");
@@ -483,6 +482,12 @@ function retour(evt){
 					circlei.setAttribute("r",1.5*circlei.getAttribute("r"));
 				}
 			}
+}
+
+if(isChrome || isSafari || isOpera){
+	cleanDiv();
+	
+	document.getElementById("body-content-text").innerHTML = "Si vous êtes sous Chrome cette visualisation risque de ne pas fonctionner correctement. Il y en a d'autres !</br></br></br>Des visualisations: comme la treemap ou encore le nuage de mots, mais il y a aussi d'autres navigateurs. Comme Firefox qui est compatible</br>";
 }
 
 
