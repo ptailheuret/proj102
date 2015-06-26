@@ -8,6 +8,7 @@ function writeSpecificContentHomeMadeVisu(){
 document.getElementById("body-content-specific").innerHTML = "Veuillez nous excuser pour la gêne occasionnée, nous sommes en chantier. Si vous avez sélectionné la treemap, choissez une année !";
 }
 
+
 function reset(){
 
 	var nuageSVG=document.getElementById("nuage");
@@ -31,7 +32,7 @@ function reset(){
 	svgg.transition()
 		.attr("width", 1000)
             .attr("height", 1000)
-		.attr("id","1")
+		.attr("id","homemade-visu")
 		
 	contexte.transition()
 			.style("opacity",0)
@@ -115,11 +116,11 @@ function changementTreeMap(){
 		.each("end",function(){d3.select(this).remove();})
 }
 		
-var svgg=d3.select("body")
+var svgg=d3.select("#body-content-graph")
 		   .append("svg")
 		     .attr("width", 1000)
 			 .attr("height", 1000)
-			 .attr("id","1")
+			 .attr("id","homemade-visu")
 		
 var d1=["1981","1988","1995","2007"];
 

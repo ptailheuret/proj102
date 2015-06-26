@@ -32,7 +32,7 @@ function reset(){
 	svgg.transition()
 		.attr("width", 1000)
             .attr("height", 1000)
-		.attr("id","1")
+		.attr("id","homemade-visu1")
 		
 	contexte.transition()
 			.style("opacity",0)
@@ -116,11 +116,11 @@ function changementTreeMap(){
 		.each("end",function(){d3.select(this).remove();})
 }
 		
-var svgg=d3.select("body")
+var svgg=d3.select("#body-content-graph")
 		   .append("svg")
 		     .attr("width", 1000)
 			 .attr("height", 1000)
-			 .attr("id","1")
+			 .attr("id","homemade-visu")
 		
 var d1=["1981","1988","1995","2007"];
 

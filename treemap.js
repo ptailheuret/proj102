@@ -8,7 +8,7 @@ function writeTextTreemap(){
           .duration(1000)      
           .style("opacity", 1); 
 					
-document.getElementById("body-content-text").innerHTML = 'Introduced by Ben Shneiderman in 1991, a treemap recursively subdivides area into rectangles. As with adjacency diagrams, the size of any node in the tree is quickly revealed. “Squarified” treemaps use approximately-square rectangles, which offer better readability and size estimation than naïve “slice-and-dice” subdivision. Fancier algorithms such as Voronoi and jigsaw treemaps also exist but are less common.';
+document.getElementById("body-content-text").innerHTML = "La treemap a été crée en 1991 par Ben Shneiderman, elle subdivise récursivement des zones en rectangle. En tant que graphique hiérarchique, elle permet de voir de façon clair la différence de poids entre divers noeuds à niveau/profondeur égale.</br></br>Par soucis de lisibilité nous avons ajouté quelques fonctions:    <ul><li>Des bulleinfos s'affichent lorsque l'on survole une case, on connait alors le locuteur, le thème associé au mot, son poids, et le poids chez le candidat adverse.</li><li>Lorsque l'on survole un case, le thème correspondant reste opaque, quand les autre s'effacent</li><li>Un clic gauche sur un rectangle va occasionner un zoom sur le thème en question, et fournir une vue plus précise, un clic droit ramène à la vue générale</li></ul>";
 }
 
 var specificContent = d3.select("#body-content-specific");

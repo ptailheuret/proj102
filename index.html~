@@ -34,7 +34,7 @@
 					    <form id="tfnewsearch" method="get" action="javascript:void()" 
 					        onSubmit="if(this.tfq.value!=null && this.tfq.value!='')
 					        parent.findString(this.tfq.value);return false;">
-					            <input type="text" id="tfq" class="tftextinput2" name="q" size="30" maxlength="120" value="" onmouseover='showTooltipSpec()'>
+					            <input type="text" id="tfq" class="tftextinput2" name="q" size="20" maxlength="120" value="" onmouseover='showTooltipSpec()'>
 					    </form>
 					    <div class="tfclear"></div>
 					</div>
@@ -63,7 +63,7 @@
 	<body oncontextmenu="return false;">
 
 	<button onclick="abstractButton()">Vision synthétique</button>
-	<button onclick="reset()">RESET</button>
+	<button onclick="reset()">Relancer la homemadevisu</button>
 		
 	<div class="body">
 		<a href="./index.html" title="Analyse des débats présidentiels français - Home">
@@ -72,43 +72,13 @@
 		</a>
 
 		</br>
-		</br>
 			
 		<!-- C'est le contenu du "body" -->
 		<div id="body-content">
 			<!-- C'est le texte de présentation du graphe affiché -->
 			<div id="body-content-text" class="body-content">
-			
-			<h3>Description du projet</h3>
-			Comment évoluent les stratégies de communication adoptées par les candidats lors des élections présidentielles ? Quels sont les thèmes de prédilection des candidats lors d’une élection? Ces analyses, réalisées par des sociologues et des journalistes, font de plus en plus appel à des techniques de fouilles de données textuelles avec le récent engouement de la communauté journalistique pour le “data-journalisme” ou journalisme de données.</br>
-
-De manière générale, la fouille de données ou data mining consiste en le développement de méthodes pour l’exploration et l’analyse de gros volumes de données. L’objectif est de faire émerger de ces données des structures à l’origine invisibles par un analyste humain. Les méthodes impliquées relèvent des domaines de l’intelligence artificielle, de l’apprentissage, des statistiques et des systèmes de bases de données.</br>
-
-L’objectif de ce projet est d’imaginer et de développer une interface de navigation dans les transcriptions des débats des présidentielles qui permettent aux journalistes et sociologues d’étayer leurs analyses.</br>
-
-Cette interface pourra proposer :</br>
-<ul>
-<li>Des méthodes statistiques de fouille de données textuelles intégrant différents niveaux de complexité (ex: fréquences de mots, calcul de similarité, classification), afin d’extraire par exemple les caractéristiques lexicales discriminant les débats d’un candidat par rapport à un autre.</li>
-<li>Une interface de visualisation des résultats des analyses et de navigation dans les débats sera imaginée et développée.</li>
-</ul>
-			
-Les membres de l'équipe(par ordre alphabétique)
-<ul> 
-	<li>Groupe analyse de données:</li>			
-	<ul> 
-		<li>Benjamin Battino</li> 
-		<li>Martin Chochod</li> 
-		<li>Dimitri Garcia</li> 
-	</ul>
-	<li>Groupe visualisation</li>
-	<ul> 
-		<li>Anthony Hu</li> 
-		<li>Patrick Tailheuret</li> 
-		<li>Rémy Soukarie</li> 
-	</ul>
-</ul>
+			Cette visualisation est complexe. Description à venir
 			</div>
-			</br>
 			</br>
 			<!-- C'est le contenu (textuel) spécifique au graphe affiché -->
 			<div id="body-content-specific" class="body-content" style="opacity:0;"> </div>
