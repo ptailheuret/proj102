@@ -2,6 +2,7 @@ body {
 			font-family: 'Open Sans', sans-serif;
 		  margin: auto;
 		  position: relative;
+			height: 100%;
 		  width: 100%;
 		}
 		
@@ -14,7 +15,6 @@ body {
 		
 #footer {
 		  font-family: 'Open Sans', sans-serif;
-		  margin-top: 60px;
 		  position: absolute;
 			bottom:0;
 		  width: 100%;
@@ -24,12 +24,18 @@ body {
 			padding-bottom: 0px;
 			height: 30px;
 		}
+#wrapper{
+   min-height:100%;
+   position:relative;
+}
 		
 .body {
 		  font-family: 'Open Sans', sans-serif;
 		  margin: auto;
 		  position: relative;
 		  width: 960px;
+			height: 100%;
+			padding-bottom:30px;
 		}
 
 .body-content{
