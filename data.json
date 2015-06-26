@@ -1,0 +1,29 @@
+[
+
+{"articles": [], 
+"total": 0, "name": "Economie"},
+{"articles": [[1981, 2], [1988, 4], [1995, 10], [2007, 7]], 
+"total": 23, "name": "(gauche)"}, 
+{"articles": [[1981, 9], [1988, 3], [1995, 9], [2007, 15]], 
+"total": 36, "name": "(droite)"},
+
+{"articles": [], 
+"total": 0, "name": "Sécurité"},
+{"articles": [[1981, 4], [1988, 12], [1995, 3], [2007, 10]], 
+"total": 29, "name": "(gauche)"}, 
+{"articles": [[1981, 12], [1988, 2], [1995, 4], [2007, 7]], 
+"total": 25, "name": "(droite)"},
+
+{"articles": [], 
+"total": 0, "name": "Inégalités"},
+{"articles": [[1981, 6], [1988, 10], [1995, 11], [2007, 23]], 
+"total": 50, "name": "(gauche)"}, 
+{"articles": [[1981, 10], [1988, 3], [1995, 17], [2007, 17]], 
+"total": 47, "name": "(droite)"},
+
+{"articles": [], 
+"total": 0, "name": "Justice"},
+{"articles": [[1981, 10], [1988, 6], [1995, 2], [2007, 12]], 
+"total": 40, "name": "(gauche)"}, 
+{"articles": [[1981, 6], [1988, 22], [1995, 9], [2007, 14]], 
+"total": 51, "name": "(droite)"}]

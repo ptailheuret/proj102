@@ -101,7 +101,7 @@ var annee = function(ev){
 			switch(storedTheme){
 				case 'select-treemap':{
 					writeSpecificContentTreemap();
-					switchData('json/debat1981.json');
+					tm.switchData('json/debat1981.json');
 					loadgraph();
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
@@ -120,7 +120,7 @@ var annee = function(ev){
 			switch(storedTheme){
 				case 'select-treemap':{
 					writeSpecificContentTreemap();
-					switchData('json/debat1988.json');
+					tm.switchData('json/debat1988.json');
 					loadgraph();
 					showTooltip("Cliquez sur une case pour comparer le poids de chaque thème suivant les candidats !", "select-year" , 80, 50, true, 0);
 				}
@@ -175,10 +175,20 @@ var annee = function(ev){
 		 }
 };
 
+
+// Permet au bouton "Vision synthétique" d'afficher l'abstract
+function abstractButton(){
+		cleanDiv();
+		unloadgraph();
+		var ab = new Abstract();
+		ab.createAbstract();
+		ab.drawAbstract();
+		loadgraph();
+}
 // Affiche le contenu du "body-content"
 function loadgraph(){
 	d3.select("#body-content-graph").transition()        
-          .duration(2000)      
+          .duration(1000)      
           .style("opacity", 1); 
 }
 

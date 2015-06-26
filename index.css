@@ -48,9 +48,9 @@ a:active {
 
 
 form {
-	position: absolute;
-	right: 10px;
-	top: 10px;
+	position: relative;
+	/*right: 10px;
+	top: 10px;*/
 }
 
 #masthead-container {
@@ -186,3 +186,10 @@ div.tooltipbody{
 	border-radius: 8px;           
 	pointer-events: none;         
 }
+
+.axis path,.axis line {fill: none;stroke:#b6b6b6;shape-rendering: crispEdges;}
+/*.tick line{fill:none;stroke:none;}*/
+.tick text{fill:#999;}
+g.journal.active{cursor:pointer;}
+text.label{font-size:12px;font-weight:bold;cursor:pointer;}
+text.value{font-size:12px;font-weight:bold;}
