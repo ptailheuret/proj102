@@ -220,6 +220,8 @@ var words, margin, width, height, dessin;
 				.attr("onclick","changePar(evt)")
         .attr("cursor","pointer")
 		.on("contextmenu", function(){
+			d3.select("#nuage").remove();
+			
 			if(!cloudGauche){
 				Cloud.prototype.changerDonnees(leftdata[0],leftdata[1]);
 				showTooltip("C'est au tour de "+ cloudPoliticianLeft +"!", "politician-name" , 70, 50, true, 0);
