@@ -113,6 +113,7 @@ var annee = function(ev){
 				}
 				break;
 				case 'select-cloud':{
+					d3.select("#nuage").remove();
 					cl.loadButtons(1981);
 					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
@@ -132,6 +133,7 @@ var annee = function(ev){
 				}
 				break;
 				case 'select-cloud':{
+					d3.select("#nuage").remove();
 					cl.loadButtons(1988);
 					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
@@ -151,6 +153,7 @@ var annee = function(ev){
 				}
 				break;
 				case 'select-cloud':{
+					d3.select("#nuage").remove();
 					cl.loadButtons(1995);
 					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
@@ -170,6 +173,7 @@ var annee = function(ev){
 				}
 				break;
 				case 'select-cloud':{
+					d3.select("#nuage").remove();
 					cl.loadButtons(2007);
 					loadgraph();
 					showTooltip("Effectuez un clic droit sur un mot pour changer de candidat !", "select-year" , 80, 50, true, 1000);
